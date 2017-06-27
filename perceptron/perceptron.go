@@ -1,4 +1,4 @@
-package perceptron
+package main
 
 // This is a Go implementation of the perceptron as created by Daniel Shiffman of The Coding Train in this video:
 // https://youtu.be/ntKn5TPHHAk
