@@ -3,11 +3,7 @@ package main
 // This is a Go implementation of the perceptron as created by Daniel Shiffman of The Coding Train in this video:
 // https://youtu.be/ntKn5TPHHAk
 
-import (
-	"fmt"
-
-	"github.com/google/gofuzz"
-)
+import "github.com/google/gofuzz"
 
 var weights []float64
 
@@ -23,9 +19,7 @@ func Guess(inputs []float64) int {
 	var sum float64
 
 	setup()
-	for _, i := range weights {
-		fmt.Printf("%f\n", i)
-	}
+
 	for i := range inputs {
 		sum += inputs[i] * weights[i]
 	}
@@ -43,10 +37,6 @@ func generateWeights(f fuzz.Fuzzer) []float64 {
 	// Generate random weights
 	for i := range output {
 		f.Fuzz(&output[i])
-		// // Half the time, flip the sign
-		// if rand.Float64() > 0.5 {
-		// 	output[i] *= -1
-		// }
 	}
 	return output
 }
