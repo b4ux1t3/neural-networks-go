@@ -8,8 +8,10 @@ import (
 
 func main() {
 	inputs := [2]Point{{x: 2, y: 7}, {x: 4, y: -2}}
-
-	fmt.Printf("%d\n", Train(inputs[0].ToSlice()))
-	fmt.Printf("%d\n", Train(inputs[1].ToSlice()))
+	for _, i := range inputs {
+		currentInput := i.ToSlice()
+		label := int(currentInput[2])
+		fmt.Printf("%d\n", Guess(currentInput[:1]))
+	}
 
 }
